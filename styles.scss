@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 12px;
+}
+
+nav {
+    #spritesDiv {
+        height: 10%;
+        border: solid;
+    }
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+#pokemonList img {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}

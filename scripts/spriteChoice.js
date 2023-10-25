@@ -1,5 +1,4 @@
 const spritesDiv = document.getElementById("spritesDiv");
-
 const spriteChoice = ['regular', 'shiny'];
 
 spriteChoice.forEach(sprite => {
@@ -9,7 +8,7 @@ spriteChoice.forEach(sprite => {
 
     const radio = document.createElement('input');
     radio.type = 'radio';
-    radio.name = 'typeRadio';
+    radio.name = 'spritesRadio';
     radio.value = sprite;
 
     label.appendChild(radio);

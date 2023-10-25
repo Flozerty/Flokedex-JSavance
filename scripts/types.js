@@ -1,11 +1,11 @@
 const typeDiv = document.getElementById("typeDiv");
+const typesTable = [];
 
 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
     .then(response => response.json())
     .then(pokemons => {
-        const typesTable = [];
 
-        //On récupère tous les types ( ternaire illisible :(  )
+        //On récupère tous les types
         pokemons.forEach(pokemon => {
             if (pokemon.types) {
                 pokemon.types.forEach(type => {
@@ -18,16 +18,15 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
 
         // POur chaque type, on créait un radio
         typesTable.forEach(type => {
-
             const label = document.createElement('label');
             label.textContent = type;
 
-            const radio = document.createElement('input');
-            radio.type = 'radio';
-            radio.name = 'typeRadio';
-            radio.value = type;
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.name = 'typeRadio';
+            checkbox.value = type;
 
-            label.appendChild(radio);
+            label.appendChild(checkbox);
             typeDiv.appendChild(label);
         });
     })
@@ -35,4 +34,6 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
         console.error("erreur pendant la récupération des types : " + error);
     });
 
-export { typesTable };
+
+
+export { typesTable }
