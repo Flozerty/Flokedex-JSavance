@@ -35,8 +35,9 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                     .then(response => response.json())
                     .then(pokemons => {
-                        console.log(pokemons);
+                        pkmnbyTypes = [];
                         for (let i = 0; i < pokemons.length; i++) {
+                            const pokemonType = pokemons[i].types?.map(type => type.name);
                             pokemons[i].types?.forEach(type => {
 
                                 if (selectedTypes.includes(type.name)) {
@@ -45,9 +46,9 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                                 }
                             })
                         }
+                        console.log(pkmnbyTypes)
+                        displayPkmn(pkmnbyTypes)
                     });
-                console.log(pkmnbyTypes)
-                displayPkmn(pkmnbyTypes)
             });
 
             label.appendChild(checkbox);
