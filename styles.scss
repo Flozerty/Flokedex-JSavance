@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 12px;
 }
 
 
@@ -11,7 +10,7 @@ body {
 }
 
 nav {
-
+    font-size: 12px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -51,10 +50,17 @@ nav {
 
 }
 
-#pokemonList img {
-    position: relative;
-    width: 100px;
-    height: 100px;
+#pokemonList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5px;
+
+    img {
+        position: relative;
+        width: 100px;
+        height: 100px;
+    }
 }
 
 footer {

@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-size: 12px;
 }
 
 body {
@@ -10,6 +9,7 @@ body {
 }
 
 nav {
+  font-size: 12px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
@@ -40,6 +40,12 @@ nav #spritesDiv {
   align-items: flex-end;
 }
 
+#pokemonList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 5px;
+}
 #pokemonList img {
   position: relative;
   width: 100px;
