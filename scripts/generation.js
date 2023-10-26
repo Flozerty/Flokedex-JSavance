@@ -1,7 +1,9 @@
+import { Card } from './pokemonCard.js';
+
 const generationDiv = document.getElementById("generationDiv");
 const genTable = ['All'];
 const pokemonList = document.getElementById('pokemonList');
-
+const pkmnByGen = [];
 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
     .then(response => response.json())
     .then(pokemons => {
@@ -11,7 +13,7 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                 null : genTable.push(pokemon.generation);
         });
 
-        // Pour chaque gen, on crée un radio
+        // Pour chaque gen, on crée un radio (même nom!!)
         genTable.forEach(gen => {
 
             const label = document.createElement('label');
@@ -31,26 +33,28 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
         console.error("Erreur pendant la récupération des générations : " + error);
     });
 
-
-
 generationDiv.addEventListener('change', function () {
     const selectedGeneration = document.querySelector('input[name="generationRadio"]:checked').value;
 
-    fetch(`https://api-pokemon-fr.vercel.app/api/v1/gen/${selectedGeneration}`)
+    const apiUrl = (selectedGeneration === 'All') ?
+        'https://api-pokemon-fr.vercel.app/api/v1/pokemon' :
+        `https://api-pokemon-fr.vercel.app/api/v1/gen/${selectedGeneration}`;
+
+    fetch(apiUrl)
         .then(response => response.json())
         .then(pokemons => {
+
+
             pokemonList.innerHTML = ''; //reset des images
 
-            const pkmnByGen = pokemons.map(pokemon => {
-                const img = document.createElement('img');
-                img.src = pokemon.sprites.regular;
-                img.alt = pokemon.name.fr;
-                return img;
+            const newpkmnByGen = pokemons.map(pokemons => {
+                return new Card(pokemons.name.fr, pokemons.generation, pokemons.sprites.regular)
             });
+            // pkmnByGen prend les nouvelles valeurs
+            pkmnByGen.length = 0;
+            pkmnByGen.push(...newpkmnByGen);
 
-            pkmnByGen.forEach(img => {
-                pokemonList.appendChild(img);
-            });
+            console.log(pkmnByGen)
 
         })
         .catch(error => {
@@ -58,4 +62,4 @@ generationDiv.addEventListener('change', function () {
         });
 });
 
-export { genTable };
+export { pkmnByGen };
