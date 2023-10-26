@@ -19,14 +19,14 @@ class Card {
 
     createCard(Card) {
         this.li = document.createElement("li");
-        this.li.classList.add(`carte`);
+        this.li.classList.add('carte');
 
         this.image = document.createElement("img");
         this.image.src = this.imageURL;
         this.image.alt = `image de ${this.nom}`;
 
         this.div = document.createElement("div");
-        this.div.classList.add(`descriptions`);
+        this.div.classList.add(`infos`);
 
         this.h2Name = document.createElement("h2");
         this.h2Name.textContent = this.nom;
