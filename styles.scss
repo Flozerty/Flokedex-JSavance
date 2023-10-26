@@ -1,3 +1,20 @@
+@font-face {
+    font-family: "font-1";
+    src: url(../assets/fonts/JosefinSans-Medium.ttf);
+}
+
+@mixin verticalCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+$font-1: "font-1", sans-serif;
+$color-1: #61dafb;
+$color-2: salmon;
+$color-3: #282c34;
+
+
 * {
     padding: 0;
     margin: 0;
@@ -95,10 +112,50 @@ nav {
     margin: 5px;
     display: flex;
 
-    img {
+    .carte {
         position: relative;
-        width: 100px;
         height: 100px;
+        width: 100px;
+        border-radius: 4px;
+        transition: 0.3s;
+
+        h2 {
+            font-size: 1rem;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+            z-index: 2;
+        }
+
+        &:hover .infos {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+
+        .infos {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            height: 100%;
+            width: 100%;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            opacity: 0;
+            transform: scaleY(0);
+            transition: 0.3s;
+        }
+
+        img {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
     }
 }
 
