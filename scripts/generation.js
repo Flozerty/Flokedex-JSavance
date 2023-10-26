@@ -1,4 +1,6 @@
 import { displayPkmn } from "./pokemonList.js";
+import { pkmnbyTypes } from "./types.js";
+
 const generationDiv = document.getElementById("generationDiv");
 const genTable = ['All'];
 let pkmnbyGen = [];
@@ -34,7 +36,7 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                     .then(response => response.json())
                     .then(pokemons => {
                         pkmnbyGen = pokemons;
-                        displayPkmn(pkmnbyGen);
+                        displayPkmn(pkmnbyGen, pkmnbyTypes);
                     })
                     .catch(error => {
                         console.error('Erreur pendant la récupération des pkmn par génération : ' + error);
@@ -46,12 +48,11 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
             label.appendChild(radio);
             generationDiv.appendChild(label);
 
-            if (index === 0) {
-                radio.checked = true;
-                //   displayPkmn('All', )
-            }
+
         });
     })
     .catch(error => {
         console.error("Erreur pendant la récupération des générations : " + error);
     });
+
+export { pkmnbyGen };

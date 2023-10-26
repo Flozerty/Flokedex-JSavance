@@ -1,8 +1,10 @@
 import { displayPkmn } from "./pokemonList.js";
-const typeDiv = document.getElementById("typeDiv");
-const typesTable = [];
+import { pkmnbyGen } from "./generation.js";
 
+const typeDiv = document.getElementById("typeDiv");
+let typesTable = [];
 let pkmnbyTypes = [];
+
 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
     .then(response => response.json())
     .then(pokemons => {
@@ -36,18 +38,29 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                     .then(response => response.json())
                     .then(pokemons => {
                         pkmnbyTypes = [];
-                        for (let i = 0; i < pokemons.length; i++) {
-                            const pokemonType = pokemons[i].types?.map(type => type.name);
-                            pokemons[i].types?.forEach(type => {
+                        for (let i = 1; i < pokemons.length; i++) {
+                            let allTypes = true;
+                            let pokemonTypes = [];
 
-                                if (selectedTypes.includes(type.name)) {
-                                    console.log('c');
-                                    pkmnbyTypes.push(pokemons[i]);
+                            if (pokemons[i].types) {
+                                pokemonTypes = pokemons[i].types.map(type => type.name)
+                            }
+
+                            // si un des deux types n'est pas présent, on ne prend pas.
+                            for (const selectedType of selectedTypes) {
+                                if (!pokemonTypes.includes(selectedType)) {
+                                    allTypes = false;
+                                    break;
                                 }
-                            })
+                            }
+                            if (allTypes) {
+                                pkmnbyTypes.push(pokemons[i]);
+                            }
                         }
-                        console.log(pkmnbyTypes)
-                        displayPkmn(pkmnbyTypes)
+                        displayPkmn(pkmnbyTypes, pkmnbyGen);
+                    })
+                    .catch(error => {
+                        console.error("erreur pendant la récupération des types : " + error);
                     });
             });
 
@@ -61,4 +74,5 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
 
 
 
-export { typesTable }
+export { typesTable };
+export { pkmnbyTypes };
