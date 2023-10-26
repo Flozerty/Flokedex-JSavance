@@ -9,8 +9,8 @@ function displayPkmn(pokemons) {
     pokemonList.innerHTML = '';
 
     pokemons.forEach(pokemon => {
-        const { name, types, sprites } = pokemon;
-        const card = new Card(name.fr, types, sprites.regular);
+        const { name, pokedexId, sprites } = pokemon;
+        const card = new Card(name.fr, pokedexId, sprites.regular);
     });
 }
 
