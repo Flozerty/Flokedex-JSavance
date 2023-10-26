@@ -1,6 +1,8 @@
+import { displayPkmn } from "./pokemonList.js";
 const typeDiv = document.getElementById("typeDiv");
 const typesTable = [];
 
+let pkmnbyTypes = [];
 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
     .then(response => response.json())
     .then(pokemons => {
@@ -23,8 +25,30 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
 
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
-            checkbox.name = 'typeRadio';
+            checkbox.name = 'typesCheckbox';
             checkbox.value = type;
+
+            checkbox.addEventListener('change', function () {
+                const selectedTypeElements = document.querySelectorAll('input[name="typesCheckbox"]:checked');
+                const selectedTypes = Array.from(selectedTypeElements).map(checked => checked.value);
+                console.log(selectedTypes)
+                fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
+                    .then(response => response.json())
+                    .then(pokemons => {
+                        console.log(pokemons);
+                        for (let i = 0; i < pokemons.length; i++) {
+                            pokemons[i].types?.forEach(type => {
+
+                                if (selectedTypes.includes(type.name)) {
+                                    console.log('c');
+                                    pkmnbyTypes.push(pokemons[i]);
+                                }
+                            })
+                        }
+                    });
+                console.log(pkmnbyTypes)
+                displayPkmn(pkmnbyTypes)
+            });
 
             label.appendChild(checkbox);
             typeDiv.appendChild(label);

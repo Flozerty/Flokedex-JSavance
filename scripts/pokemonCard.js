@@ -1,9 +1,9 @@
 const pokemonList = document.getElementById('pokemonList');
 
 class Card {
-    constructor(nom, generation, imageURL) {
+    constructor(nom, pokedexId, imageURL) {
         this.nom = nom;
-        this.generation = generation;
+        this.pokedexId = pokedexId;
         this.imageURL = imageURL;
 
         this.createCard(); // Appel de la méthode pour créer la carte
@@ -13,11 +13,11 @@ class Card {
     <img src=''>
     <div>
         <h2>nom</h2>
-        <h2>gen</h2>    
+        <h2>Id</h2>    
     </div>
-    
     */
-    createCard() {
+
+    createCard(Card) {
         this.li = document.createElement("li");
 
         this.image = document.createElement("img");
@@ -28,11 +28,11 @@ class Card {
         this.h2Name = document.createElement("h2");
         this.h2Name.textContent = this.nom;
 
-        this.h2Gen = document.createElement("h2");
-        this.h2Gen.textContent = this.generation;
+        this.h2Id = document.createElement("h2");
+        this.h2Id.textContent = this.pokedexId;
 
         this.div.appendChild(this.h2Name);
-        this.div.appendChild(this.h2Gen);
+        this.div.appendChild(this.h2Id);
 
 
         this.li.appendChild(this.image);
