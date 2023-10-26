@@ -5,6 +5,10 @@ const generationDiv = document.getElementById("generationDiv");
 const genTable = ['All'];
 let pkmnbyGen = [];
 
+const titre = document.createElement('h2');
+titre.textContent = 'Coisissez votre gen : '
+generationDiv.appendChild(titre);
+
 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
     .then(response => response.json())
     .then(pokemons => {

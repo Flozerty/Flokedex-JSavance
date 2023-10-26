@@ -6,6 +6,10 @@ let typesTable = [];
 let pkmnbyTypes = [];
 let selectedTypes = [];
 
+const titre = document.createElement('h2');
+titre.textContent = 'Choisissez vos types : '
+typeDiv.appendChild(titre);
+
 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
     .then(response => response.json())
     .then(pokemons => {
@@ -24,7 +28,7 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
         // POur chaque type, on créait un radio
         typesTable.forEach(type => {
             const label = document.createElement('label');
-            label.textContent = type;
+            label.textContent = `${type} :`;
 
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';

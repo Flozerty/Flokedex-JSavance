@@ -4,6 +4,33 @@
   box-sizing: border-box;
 }
 
+.logo_container {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  width: 50%;
+  position: center;
+}
+
+#logo {
+  width: 50px;
+  height: 50px;
+}
+
+input {
+  margin: 2px;
+}
+
+li {
+  list-style-type: none;
+}
+
 body {
   background-color: rgba(255, 51, 51, 0.8);
 }
@@ -13,8 +40,10 @@ nav {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
+  align-items: center;
   min-height: 100px;
   z-index: 5;
+  margin: 20px 0 20px 0;
 }
 nav #typeDiv {
   width: 50%;
@@ -23,13 +52,20 @@ nav #typeDiv {
   flex-wrap: wrap;
   align-items: center;
 }
+nav #typeDiv h2 {
+  color: blue;
+}
 nav #generationDiv {
   width: 30%;
+  height: 50%;
   border: solid;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+nav #generationDiv h2 {
+  color: blue;
 }
 nav #spritesDiv {
   width: 15%;
