@@ -31,8 +31,8 @@ function displayPkmn(typesList, genList) {
     console.log('match : ', matchingPkmn)
 
     matchingPkmn.forEach(pokemon => {
-        const { name, pokedexId, sprites } = pokemon;
-        const card = new Card(name.fr, pokedexId, sprites.regular);
+        const { name, pokedexId, generation, sprites } = pokemon;
+        const card = new Card(name.fr, pokedexId, generation, sprites.regular);
     });
 }
 

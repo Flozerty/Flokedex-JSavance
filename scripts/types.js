@@ -6,7 +6,7 @@ let typesTable = [];
 let pkmnbyTypes = [];
 let selectedTypes = [];
 
-const titre = document.createElement('h2');
+const titre = document.createElement('legend');
 titre.textContent = 'Choisissez vos types : '
 typeDiv.appendChild(titre);
 

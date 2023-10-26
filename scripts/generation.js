@@ -5,7 +5,7 @@ const generationDiv = document.getElementById("generationDiv");
 const genTable = ['All'];
 let pkmnbyGen = [];
 
-const titre = document.createElement('h2');
+const titre = document.createElement('legend');
 titre.textContent = 'Coisissez votre gen : '
 generationDiv.appendChild(titre);
 
