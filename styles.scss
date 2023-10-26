@@ -2,20 +2,52 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-
-body {
     font-size: 12px;
 }
 
+
+body {
+    background-color: rgb(255, 51, 51, 0.8);
+}
+
 nav {
-    #spritesDiv {
-        height: 10%;
-        border: solid;
-    }
 
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: center;
+    min-height: 100px;
+    z-index: 5;
+
+    #typeDiv {
+        width: 50%;
+        display: flex;
+        border: solid;
+        flex-wrap: wrap;
+        align-items: center;
+
+    }
+
+    #generationDiv {
+        width: 30%;
+        border: solid;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+
+    }
+
+    #spritesDiv {
+        width: 15%;
+        border: solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+
 
 }
 
@@ -23,4 +55,11 @@ nav {
     position: relative;
     width: 100px;
     height: 100px;
+}
+
+footer {
+    background-image: url('src/backgroundDown.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+
 }
