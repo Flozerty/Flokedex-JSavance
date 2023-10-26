@@ -36,7 +36,7 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                     .then(response => response.json())
                     .then(pokemons => {
                         pkmnbyGen = pokemons;
-                        displayPkmn(pkmnbyGen, pkmnbyTypes);
+                        displayPkmn(pkmnbyTypes, pkmnbyGen);
                     })
                     .catch(error => {
                         console.error('Erreur pendant la récupération des pkmn par génération : ' + error);

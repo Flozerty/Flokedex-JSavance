@@ -13,9 +13,10 @@ nav {
     font-size: 12px;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
+    justify-content: space-around;
     min-height: 100px;
     z-index: 5;
+
 
     #typeDiv {
         width: 50%;
@@ -44,6 +45,7 @@ nav {
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
+        display: none;
     }
 
 
@@ -55,6 +57,7 @@ nav {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 5px;
+    display: flex;
 
     img {
         position: relative;

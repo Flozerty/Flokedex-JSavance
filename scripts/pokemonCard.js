@@ -19,17 +19,22 @@ class Card {
 
     createCard(Card) {
         this.li = document.createElement("li");
+        this.li.classList.add(`carte`);
 
         this.image = document.createElement("img");
         this.image.src = this.imageURL;
+        this.image.alt = `image de ${this.nom}`;
 
         this.div = document.createElement("div");
+        this.div.classList.add(`descriptions`);
 
         this.h2Name = document.createElement("h2");
         this.h2Name.textContent = this.nom;
 
+
         this.h2Id = document.createElement("h2");
-        this.h2Id.textContent = this.pokedexId;
+        this.h2Id.textContent = `Id : ${this.pokedexId}`;
+
 
         this.div.appendChild(this.h2Name);
         this.div.appendChild(this.h2Id);

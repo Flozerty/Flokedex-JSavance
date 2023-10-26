@@ -12,7 +12,7 @@ nav {
   font-size: 12px;
   display: flex;
   flex-direction: row-reverse;
-  justify-content: center;
+  justify-content: space-around;
   min-height: 100px;
   z-index: 5;
 }
@@ -38,6 +38,7 @@ nav #spritesDiv {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  display: none;
 }
 
 #pokemonList {
@@ -45,6 +46,7 @@ nav #spritesDiv {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 5px;
+  display: flex;
 }
 #pokemonList img {
   position: relative;

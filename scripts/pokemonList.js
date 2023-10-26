@@ -1,29 +1,30 @@
 import { Card } from "./pokemonCard.js";
+import { selectedTypes } from "./types.js";
 const pokemonList = document.getElementById('pokemonList');
 
-function displayPkmn(newList, oldList) {
-    console.log('old : ', oldList, 'new : ', newList)
+function displayPkmn(typesList, genList) {
+    console.log('type : ', typesList, 'gen : ', genList)
 
     pokemonList.innerHTML = '';
-    const matchingPkmn = [];
+    let matchingPkmn = [];
+    {
+        if (!genList[0]) {
+            matchingPkmn = [...typesList]
+        }
+        if (!typesList[0] && !selectedTypes[0]) {
+            matchingPkmn = [...genList]
+        }
 
-    if (oldList[0]) {
+        for (let i = 0; i < genList.length; i++) {
+            const genPkmn = genList[i];
 
+            for (let j = 0; j < genList.length; j++) {
+                const typePkmn = typesList[j];
+                if (genPkmn?.pokedexId === typePkmn?.pokedexId) {
+                    matchingPkmn.push(genPkmn);
 
-        for (let i = 0; i < newList.length; i++) {
-            const newPkmn = newList[i];
-
-            for (let j = 0; j < newList.length; j++) {
-                const oldPkmn = oldList[j];
-                if (newPkmn?.pokedexId === oldPkmn?.pokedexId) {
-                    matchingPkmn.push(oldPkmn);
-                    break;
                 }
             }
-        }
-    } else {
-        for (let i = 0; i < newList.length; i++) {
-            matchingPkmn.push(newList[i])
         }
     }
 

@@ -4,6 +4,7 @@ import { pkmnbyGen } from "./generation.js";
 const typeDiv = document.getElementById("typeDiv");
 let typesTable = [];
 let pkmnbyTypes = [];
+let selectedTypes = [];
 
 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
     .then(response => response.json())
@@ -32,7 +33,7 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
 
             checkbox.addEventListener('change', function () {
                 const selectedTypeElements = document.querySelectorAll('input[name="typesCheckbox"]:checked');
-                const selectedTypes = Array.from(selectedTypeElements).map(checked => checked.value);
+                selectedTypes = Array.from(selectedTypeElements).map(checked => checked.value);
                 console.log(selectedTypes)
                 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                     .then(response => response.json())
@@ -76,3 +77,4 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
 
 export { typesTable };
 export { pkmnbyTypes };
+export { selectedTypes };
