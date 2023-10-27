@@ -1,5 +1,5 @@
 const pokemonList = document.getElementById('pokemonList');
-
+let pressedBtn = false;
 class Card {
     constructor(nom, pokedexId, generation, imageURL) {
         this.nom = nom;
@@ -49,6 +49,13 @@ class Card {
         this.li.appendChild(this.div);
 
         pokemonList.appendChild(this.li);
+
+        this.li.addEventListener('click', () => {
+            if (pressedBtn) return;
+            console.log(`GROUAAAAAH n°${this.pokedexId}`)
+        }
+        )
     }
 }
 export { Card };
+

@@ -122,7 +122,6 @@ nav {
     }
 
     #generationDiv {
-
         min-width: 75%;
         max-width: 95%;
         margin-bottom: 10px;
@@ -149,7 +148,7 @@ nav {
     background-size: 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     display: flex;
 
     .carte {
@@ -174,6 +173,10 @@ nav {
                 opacity: 1;
                 transform: scaleY(1);
             }
+        }
+
+        &:active {
+            transform: scale(0.85);
         }
 
         .infos {
@@ -208,5 +211,4 @@ footer {
     color: $color-3;
     background-image: url('src/backgroundDown.png');
     background-size: 100% 100%;
-
 }

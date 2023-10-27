@@ -3,7 +3,7 @@ import { selectedTypes } from "./types.js";
 const pokemonList = document.getElementById('pokemonList');
 
 function displayPkmn(typesList, genList) {
-    console.log('type : ', typesList, 'gen : ', genList)
+    console.log('PkmnType : ', typesList, 'PkmnGen : ', genList)
 
     pokemonList.innerHTML = '';
     let matchingPkmn = [];
@@ -31,6 +31,7 @@ function displayPkmn(typesList, genList) {
     console.log('match : ', matchingPkmn)
 
     matchingPkmn.forEach(pokemon => {
+        if (matchingPkmn[0].pokedexId = 0) { matchingPkmn[0].pop() }
         const { name, pokedexId, generation, sprites } = pokemon;
         const card = new Card(name.fr, pokedexId, generation, sprites.regular);
     });

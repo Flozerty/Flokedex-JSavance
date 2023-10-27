@@ -125,7 +125,7 @@ nav #spritesDiv {
   background-size: 30px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   display: flex;
 }
 #pokemonList .carte {
@@ -148,6 +148,9 @@ nav #spritesDiv {
 #pokemonList .carte:hover .infos {
   opacity: 1;
   transform: scaleY(1);
+}
+#pokemonList .carte:active {
+  transform: scale(0.85);
 }
 #pokemonList .carte .infos {
   position: absolute;
