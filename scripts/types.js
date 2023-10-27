@@ -38,10 +38,16 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
             checkbox.classList.add('display_none')
 
             checkbox.addEventListener('change', function () {
+
                 const selectedTypeElements = document.querySelectorAll('input[name="typesCheckbox"]:checked');
                 selectedTypes = Array.from(selectedTypeElements).map(checked => checked.value);
                 console.log('selected types : ', selectedTypes)
 
+                if (selectedTypes.length > 2) {
+                    this.checked = false;
+                    return;
+
+                }
                 if (checkbox.checked) {
                     label.classList.add('checked')
                     label.classList.remove('unchecked')
