@@ -25,7 +25,6 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
             });
 
         });
-
         // POur chaque type, on créait un radio
         typesTable.forEach(type => {
             const label = document.createElement('label');
@@ -46,7 +45,6 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                 if (selectedTypes.length > 2) {
                     this.checked = false;
                     return;
-
                 }
                 if (checkbox.checked) {
                     label.classList.add('checked')
@@ -56,7 +54,6 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                     label.classList.add('unchecked')
                     label.classList.remove('checked')
                 }
-
                 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                     .then(response => response.json())
                     .then(pokemons => {
@@ -68,7 +65,6 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                             if (pokemons[i].types) {
                                 pokemonTypes = pokemons[i].types.map(type => type.name)
                             }
-
                             // si un des deux types n'est pas présent, on ne prend pas.
                             for (const selectedType of selectedTypes) {
                                 if (!pokemonTypes.includes(selectedType)) {
@@ -86,7 +82,6 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                         console.error("erreur pendant la récupération des types : " + error);
                     });
             });
-
             label.appendChild(checkbox);
             typeDiv.appendChild(label);
         });
@@ -94,9 +89,6 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
     .catch(error => {
         console.error("erreur pendant la récupération des types : " + error);
     });
-
-
-
 export { typesTable };
 export { pkmnbyTypes };
 export { selectedTypes };

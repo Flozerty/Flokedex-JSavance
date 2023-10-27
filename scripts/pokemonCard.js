@@ -10,14 +10,6 @@ class Card {
         this.createCard(); // Appel de la méthode pour créer la carte
     }
 
-    /*
-    <img src=''>
-    <div>
-        <h2>nom</h2>
-        <h2>Id</h2>    
-    </div>
-    */
-
     createCard(Card) {
         this.li = document.createElement("li");
         this.li.classList.add('carte');
@@ -39,11 +31,9 @@ class Card {
         this.h2Id = document.createElement("h2");
         this.h2Id.textContent = `Id : ${this.pokedexId}`;
 
-
         this.div.appendChild(this.h2Name);
         this.div.appendChild(this.h2gen);
         this.div.appendChild(this.h2Id);
-
 
         this.li.appendChild(this.imagePkmn);
         this.li.appendChild(this.div);
@@ -52,9 +42,18 @@ class Card {
 
         this.li.addEventListener('click', () => {
             if (pressedBtn) return;
-            if (`../cris/${this.pokedexId}.ogg`) {
-                playAudio(this.pokedexId);
-            }
+
+            //méthode pour vérifier si l'audio existe
+            const criUrl = `../cris/${this.pokedexId}.ogg`
+            fetch(criUrl, { method: 'HEAD' })
+                .then(response => {
+                    if (response.status === 200) {
+                        playAudio(this.pokedexId);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la vérification du fichier audio : ' + error);
+                });
         })
     }
 }
@@ -68,5 +67,4 @@ const playAudio = (Id) => {
         pressedBtn = false;
     });
 }
-
 export { Card };

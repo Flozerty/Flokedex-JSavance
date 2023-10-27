@@ -14,7 +14,6 @@ const displayPkmn = (typesList, genList) => {
         if ((!typesList[0] && !selectedTypes[1]) || !selectedTypes[0]) {
             matchingPkmn = [...genList]
         }
-
         for (let i = 0; i < genList.length; i++) {
             const genPkmn = genList[i];
 
@@ -22,19 +21,15 @@ const displayPkmn = (typesList, genList) => {
                 const typePkmn = typesList[j];
                 if (genPkmn?.pokedexId === typePkmn?.pokedexId) {
                     matchingPkmn.push(genPkmn);
-
                 }
             }
         }
     }
-
     console.log('match : ', matchingPkmn)
 
     matchingPkmn.forEach(pokemon => {
-
         const { name, pokedexId, generation, sprites } = pokemon;
         const card = new Card(name.fr, pokedexId, generation, sprites.regular);
     });
 }
-
 export { displayPkmn };

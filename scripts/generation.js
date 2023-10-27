@@ -12,7 +12,6 @@ generationDiv.appendChild(titre);
 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
     .then(response => response.json())
     .then(pokemons => {
-
         pokemons.forEach(pokemon => {
             genTable.includes(pokemon.generation) ?
                 null : genTable.push(pokemon.generation);
@@ -46,7 +45,6 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                         console.error('Erreur pendant la récupération des pkmn par génération : ' + error);
                     });
             });
-
             label.appendChild(radio);
             generationDiv.appendChild(label);
         });
@@ -54,5 +52,4 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
     .catch(error => {
         console.error("Erreur pendant la récupération des générations : " + error);
     });
-
 export { pkmnbyGen };
