@@ -47,12 +47,8 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                     });
             });
 
-
-
             label.appendChild(radio);
             generationDiv.appendChild(label);
-
-
         });
     })
     .catch(error => {
