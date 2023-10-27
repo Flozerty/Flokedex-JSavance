@@ -127,6 +127,7 @@ nav #spritesDiv {
   flex-wrap: wrap;
   justify-content: space-around;
   display: flex;
+  margin-bottom: 7%;
 }
 #pokemonList .carte {
   background-image: url(src/ball.png);
