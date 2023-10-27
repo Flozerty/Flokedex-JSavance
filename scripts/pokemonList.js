@@ -11,7 +11,7 @@ function displayPkmn(typesList, genList) {
         if (!genList[0]) {
             matchingPkmn = [...typesList]
         }
-        if (!typesList[0] && !selectedTypes[0]) {
+        if ((!typesList[0] && !selectedTypes[2]) || !selectedTypes[0]) {
             matchingPkmn = [...genList]
         }
 

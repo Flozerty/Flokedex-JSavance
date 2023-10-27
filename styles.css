@@ -15,9 +15,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  padding: 10px;
+  border-radius: 20px;
+  width: auto;
   position: center;
   font-family: "Pacifico", cursive;
+  background-image: url(src/logoBg.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 #logo {
@@ -27,6 +33,10 @@
 
 input {
   margin: 5px 15px 5px 5px;
+}
+
+.display_none {
+  display: none;
 }
 
 body {
@@ -56,10 +66,11 @@ nav {
 }
 nav #typeDiv {
   width: 75%;
+  border: solid;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid;
+  justify-content: space-between;
   border-color: #282c34;
   flex-wrap: wrap;
   border-radius: 20px;
@@ -68,9 +79,27 @@ nav #typeDiv {
   color: #282c34;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
+nav #typeDiv label {
+  margin: 5px 10px 2px 10px;
+  padding: 0 10px;
+  border-radius: 20px;
+  border: solid;
+}
+nav #typeDiv label:hover {
+  transform: scale(1.2);
+}
+nav #typeDiv label:active {
+  transform: scale(0.9);
+}
 nav #typeDiv legend {
   color: #3f95fe;
-  align-self: center;
+}
+nav #typeDiv .checked {
+  color: #3f95fe;
+  background-color: #282c34;
+}
+nav #typeDiv .unchecked {
+  color: #282c34;
 }
 nav #generationDiv {
   min-width: 75%;

@@ -28,17 +28,28 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
         // POur chaque type, on créait un radio
         typesTable.forEach(type => {
             const label = document.createElement('label');
-            label.textContent = `${type} :`;
+            label.innerHTML = type;
 
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.name = 'typesCheckbox';
             checkbox.value = type;
+            checkbox.classList.add('display_none')
 
             checkbox.addEventListener('change', function () {
                 const selectedTypeElements = document.querySelectorAll('input[name="typesCheckbox"]:checked');
                 selectedTypes = Array.from(selectedTypeElements).map(checked => checked.value);
                 console.log('select types : ', selectedTypes)
+
+                if (checkbox.checked) {
+                    label.classList.add('checked')
+                    label.classList.remove('unchecked')
+                }
+                if (!(checkbox.checked)) {
+                    label.classList.add('unchecked')
+                    label.classList.remove('checked')
+                }
+
                 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                     .then(response => response.json())
                     .then(pokemons => {
