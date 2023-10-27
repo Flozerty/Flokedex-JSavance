@@ -38,7 +38,7 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
             checkbox.addEventListener('change', function () {
                 const selectedTypeElements = document.querySelectorAll('input[name="typesCheckbox"]:checked');
                 selectedTypes = Array.from(selectedTypeElements).map(checked => checked.value);
-                console.log(selectedTypes)
+                console.log('select types : ', selectedTypes)
                 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                     .then(response => response.json())
                     .then(pokemons => {
