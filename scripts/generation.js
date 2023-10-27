@@ -6,7 +6,7 @@ const genTable = ['All'];
 let pkmnbyGen = [];
 
 const titre = document.createElement('legend');
-titre.textContent = 'Coisissez votre gen : '
+titre.textContent = 'Choisissez votre gen : '
 generationDiv.appendChild(titre);
 
 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
