@@ -16,13 +16,14 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
 
         //On récupère tous les types
         pokemons.forEach(pokemon => {
-            if (pokemon.types) {
-                pokemon.types.forEach(type => {
-                    if (!typesTable.includes(type.name)) {
-                        typesTable.push(type.name);
-                    }
-                });
-            }
+
+            pokemon.types?.forEach(type => {
+                const { name, sprite } = type;
+                if (!typesTable.includes(type.name)) {
+                    typesTable.push(type.name);
+                }
+            });
+
         });
 
         // POur chaque type, on créait un radio

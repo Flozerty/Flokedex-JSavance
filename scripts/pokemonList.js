@@ -2,7 +2,7 @@ import { Card } from "./pokemonCard.js";
 import { selectedTypes } from "./types.js";
 const pokemonList = document.getElementById('pokemonList');
 
-function displayPkmn(typesList, genList) {
+const displayPkmn = (typesList, genList) => {
     console.log('PkmnType : ', typesList, 'PkmnGen : ', genList)
 
     pokemonList.innerHTML = '';
