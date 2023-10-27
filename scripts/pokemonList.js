@@ -11,7 +11,7 @@ const displayPkmn = (typesList, genList) => {
         if (!genList[0]) {
             matchingPkmn = [...typesList]
         }
-        if ((!typesList[0] && !selectedTypes[2]) || !selectedTypes[0]) {
+        if ((!typesList[0] && !selectedTypes[1]) || !selectedTypes[0]) {
             matchingPkmn = [...genList]
         }
 
@@ -31,7 +31,7 @@ const displayPkmn = (typesList, genList) => {
     console.log('match : ', matchingPkmn)
 
     matchingPkmn.forEach(pokemon => {
-        if (matchingPkmn[0].pokedexId = 0) { matchingPkmn[0].pop() }
+
         const { name, pokedexId, generation, sprites } = pokemon;
         const card = new Card(name.fr, pokedexId, generation, sprites.regular);
     });

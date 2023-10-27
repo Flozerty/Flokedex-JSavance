@@ -52,7 +52,7 @@ class Card {
 
         this.li.addEventListener('click', () => {
             if (pressedBtn) return;
-            if (`pokemon-cries/${Id}.ogg`) {
+            if (`pokemon-cries/${this.pokedexIdId}.ogg`) {
                 playAudio(this.pokedexId);
             }
         })
@@ -63,11 +63,11 @@ export { Card };
 
 const playAudio = (Id) => {
     const cri = new Audio(`pokemon-cries/${Id}.ogg`);
-    cri.next.currentTime = 0;
-    cri.next.play();
+    cri.currentTime = 0;
+    cri.play();
+    cri.volume = 0.03;
     pressedBtn = true;
     cri.addEventListener('ended', () => {
-        cri.pause();
         pressedBtn = false;
     });
 }
