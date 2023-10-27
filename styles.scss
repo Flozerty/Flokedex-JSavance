@@ -206,9 +206,16 @@ nav {
 }
 
 footer {
-    height: 250px;
+    height: 15%;
     @include flexCenter;
     color: $color-3;
     background-image: url('src/backgroundDown.png');
     background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
 }
