@@ -7,7 +7,9 @@ class Card {
         this.generation = generation;
         this.imageURL = imageURL;
 
-        this.createCard(); // Appel de la méthode pour créer la carte
+        if (this.pokedexId !== 0) {
+            this.createCard(); // Appel de la méthode pour créer la carte \ sauf Missing No
+        }
     }
 
     createCard(Card) {
