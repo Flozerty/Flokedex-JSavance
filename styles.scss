@@ -156,8 +156,6 @@ nav {
     justify-content: space-around;
     display: flex;
 
-    margin-bottom: 7%;
-
     .carte {
         background-image: url(src/ball.png);
         background-size: 50%;
@@ -215,10 +213,6 @@ footer {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
+    height: 100px;
 
 }

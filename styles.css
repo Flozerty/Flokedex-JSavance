@@ -130,7 +130,6 @@ nav #spritesDiv {
   flex-wrap: wrap;
   justify-content: space-around;
   display: flex;
-  margin-bottom: 7%;
 }
 #pokemonList .carte {
   background-image: url(src/ball.png);
@@ -185,10 +184,7 @@ footer {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  height: 100px;
 }
 
 /*# sourceMappingURL=styles.css.map */
