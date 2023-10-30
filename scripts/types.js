@@ -16,9 +16,8 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
 
         //On récupère tous les types
         pokemons.forEach(pokemon => {
-
             pokemon.types?.forEach(type => {
-                const { name, sprite } = type;
+                const { name, image } = type;
                 if (!typesTable.includes(type.name)) {
                     typesTable.push(type.name);
                 }
@@ -57,16 +56,17 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                 fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                     .then(response => response.json())
                     .then(pokemons => {
+                        console.log('pkmn : ', pokemons);
                         pkmnbyTypes = [];
                         for (let i = 1; i < pokemons.length; i++) {
                             let allTypes = true;
                             let pokemonTypes = [];
 
                             if (pokemons[i].types) {
-                                pokemonTypes = pokemons[i].types.map(type => type.name)
+                                pokemonTypes = pokemons[i].types.map(type => type.name);
                             }
                             // si un des deux types n'est pas présent, on ne prend pas.
-                            for (const selectedType of selectedTypes) {
+                            for (let selectedType of selectedTypes) {
                                 if (!pokemonTypes.includes(selectedType)) {
                                     allTypes = false;
                                     break;
