@@ -9,7 +9,7 @@ const titre = document.createElement('legend');
 titre.textContent = 'Choisissez votre gen : '
 generationDiv.appendChild(titre);
 
-fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
+fetch("https://tyradex.vercel.app/api/v1/pokemon")
     .then(response => response.json())
     .then(pokemons => {
         pokemons.forEach(pokemon => {
@@ -32,8 +32,8 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                 const selectedGeneration = document.querySelector('input[name="generationRadio"]:checked').value;
 
                 const apiUrl = (selectedGeneration === 'All') ?
-                    'https://api-pokemon-fr.vercel.app/api/v1/pokemon' :
-                    `https://api-pokemon-fr.vercel.app/api/v1/gen/${selectedGeneration}`;
+                    'https://tyradex.vercel.app/api/v1/pokemon' :
+                    `https://tyradex.vercel.app/api/v1/gen/${selectedGeneration}`;
 
                 fetch(apiUrl)
                     .then(response => response.json())

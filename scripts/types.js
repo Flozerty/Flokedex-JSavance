@@ -10,7 +10,7 @@ const titre = document.createElement('legend');
 titre.textContent = 'Choisissez vos types : '
 typeDiv.appendChild(titre);
 
-fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
+fetch("https://tyradex.vercel.app/api/v1/pokemon")
     .then(response => response.json())
     .then(pokemons => {
 
@@ -53,7 +53,7 @@ fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
                     label.classList.add('unchecked')
                     label.classList.remove('checked')
                 }
-                fetch("https://api-pokemon-fr.vercel.app/api/v1/pokemon")
+                fetch("https://tyradex.vercel.app/api/v1/pokemon")
                     .then(response => response.json())
                     .then(pokemons => {
                         console.log('pkmn : ', pokemons);
