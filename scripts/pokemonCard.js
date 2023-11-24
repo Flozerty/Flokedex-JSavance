@@ -60,7 +60,7 @@ class Card {
     }
 }
 const playAudio = (Id) => {
-    const cri = new Audio(`../cris/${Id}.ogg`);
+    const cri = new Audio(`./cris/${Id}.ogg`);
     cri.currentTime = 0;
     cri.play();
     cri.volume = 0.03;
