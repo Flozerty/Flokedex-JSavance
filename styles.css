@@ -44,7 +44,6 @@ input {
 body {
   background-color: salmon;
 }
-
 body li {
   list-style-type: none;
 }
@@ -67,7 +66,6 @@ nav {
   z-index: 5;
   padding: 0 0 40px 0;
 }
-
 nav #typeDiv {
   width: 75%;
   border: solid;
@@ -82,37 +80,30 @@ nav #typeDiv {
   color: #282c34;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
 }
-
 nav #typeDiv legend {
   order: 0;
   align-self: center;
   color: #3f95fe;
 }
-
 nav #typeDiv label {
   margin: 10px 20px 4px 20px;
   padding: 0 20px;
   border-radius: 40px;
   border: solid;
 }
-
 nav #typeDiv label:hover {
   transform: scale(1.2);
 }
-
 nav #typeDiv label:active {
   transform: scale(0.9);
 }
-
 nav #typeDiv .checked {
   color: #3f95fe;
   background-color: #282c34;
 }
-
 nav #typeDiv .unchecked {
   color: #282c34;
 }
-
 nav #generationDiv {
   min-width: 75%;
   max-width: 95%;
@@ -125,24 +116,19 @@ nav #generationDiv {
   color: #282c34;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
 }
-
 nav #generationDiv legend {
   color: #3f95fe;
 }
-
 nav #spritesDiv {
   display: none;
 }
 
 #pokemonList {
-  background: url();
-  background-size: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   display: flex;
 }
-
 #pokemonList .carte {
   background-image: url(src/ball.png);
   background-size: 50%;
@@ -152,21 +138,18 @@ nav #spritesDiv {
   height: 200px;
   width: 200px;
   border-radius: 8px;
+  cursor: pointer;
 }
-
 #pokemonList .carte:hover {
   z-index: 2;
 }
-
 #pokemonList .carte:hover .infos {
   opacity: 1;
   transform: scaleY(1);
 }
-
 #pokemonList .carte:active {
   transform: scale(0.85);
 }
-
 #pokemonList .carte .infos {
   position: absolute;
   top: 0;
@@ -183,7 +166,6 @@ nav #spritesDiv {
   transform: scale(0);
   transition: 0.3s;
 }
-
 #pokemonList .carte .imagePkmn {
   height: 100%;
   width: 100%;

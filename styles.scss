@@ -149,8 +149,6 @@ nav {
 }
 
 #pokemonList {
-    background: url(src/backList.jpg);
-    background-size: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -165,6 +163,8 @@ nav {
         height: 200px;
         width: 200px;
         border-radius: 8px;
+        cursor: pointer;
+
 
         &:hover {
             z-index: 2;
