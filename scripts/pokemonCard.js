@@ -46,7 +46,7 @@ class Card {
             if (pressedBtn) return;
 
             //méthode pour vérifier si l'audio existe
-            const criUrl = `../cris/${this.pokedexId}.ogg`
+            const criUrl = `/cris/${this.pokedexId}.ogg`
             fetch(criUrl, { method: 'HEAD' })
                 .then(response => {
                     if (response.status === 200) {
