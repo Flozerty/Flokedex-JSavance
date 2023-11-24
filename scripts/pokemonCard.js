@@ -12,7 +12,7 @@ class Card {
         }
     }
 
-    createCard(Card) {
+    createCard() {
         this.li = document.createElement("li");
         this.li.classList.add('carte');
 
